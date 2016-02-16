@@ -46,6 +46,8 @@
 		<table schema="" tableName="mg_grade"></table>
 		<table schema="" tableName="mg_student"></table>
 		<table schema="" tableName="mg_user"></table>
+		<table schema="" tableName="mg_teacher"></table>
+		<table schema="" tableName="mg_course"></table>
 
 
 	</context>
