@@ -3,20 +3,9 @@
 <mapper namespace="com.middleschool.grade.common.mapper.MgGradeMapper" >
   <resultMap id="BaseResultMap" type="com.middleschool.grade.common.dto.MgGrade" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="student_id" property="studentId" jdbcType="BIGINT" />
-    <result column="english" property="english" jdbcType="DOUBLE" />
-    <result column="math" property="math" jdbcType="DOUBLE" />
-    <result column="chinese" property="chinese" jdbcType="DOUBLE" />
-    <result column="Physics" property="physics" jdbcType="DOUBLE" />
-    <result column="chemistry" property="chemistry" jdbcType="DOUBLE" />
-    <result column="biology" property="biology" jdbcType="DOUBLE" />
-    <result column="history" property="history" jdbcType="DOUBLE" />
-    <result column="geography" property="geography" jdbcType="DOUBLE" />
-    <result column="politics" property="politics" jdbcType="DOUBLE" />
-    <result column="music" property="music" jdbcType="DOUBLE" />
-    <result column="art" property="art" jdbcType="DOUBLE" />
-    <result column="sports" property="sports" jdbcType="DOUBLE" />
-    <result column="computer" property="computer" jdbcType="DOUBLE" />
+    <result column="course_id" property="courseId" jdbcType="BIGINT" />
+    <result column="student_num" property="studentNum" jdbcType="BIGINT" />
+    <result column="grade" property="grade" jdbcType="DOUBLE" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -77,8 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, student_id, english, math, chinese, Physics, chemistry, biology, history, geography, 
-    politics, music, art, sports, computer
+    id, course_id, student_num, grade
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.middleschool.grade.common.dto.MgGradeExample" >
     select
@@ -111,16 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.middleschool.grade.common.dto.MgGrade" >
-    insert into mg_grade (id, student_id, english, 
-      math, chinese, Physics, 
-      chemistry, biology, history, 
-      geography, politics, music, 
-      art, sports, computer)
-    values (#{id,jdbcType=BIGINT}, #{studentId,jdbcType=BIGINT}, #{english,jdbcType=DOUBLE}, 
-      #{math,jdbcType=DOUBLE}, #{chinese,jdbcType=DOUBLE}, #{physics,jdbcType=DOUBLE}, 
-      #{chemistry,jdbcType=DOUBLE}, #{biology,jdbcType=DOUBLE}, #{history,jdbcType=DOUBLE}, 
-      #{geography,jdbcType=DOUBLE}, #{politics,jdbcType=DOUBLE}, #{music,jdbcType=DOUBLE}, 
-      #{art,jdbcType=DOUBLE}, #{sports,jdbcType=DOUBLE}, #{computer,jdbcType=DOUBLE})
+    insert into mg_grade (id, course_id, student_num, 
+      grade)
+    values (#{id,jdbcType=BIGINT}, #{courseId,jdbcType=BIGINT}, #{studentNum,jdbcType=BIGINT}, 
+      #{grade,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.middleschool.grade.common.dto.MgGrade" >
     insert into mg_grade
@@ -128,94 +110,28 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="studentId != null" >
-        student_id,
+      <if test="courseId != null" >
+        course_id,
       </if>
-      <if test="english != null" >
-        english,
+      <if test="studentNum != null" >
+        student_num,
       </if>
-      <if test="math != null" >
-        math,
-      </if>
-      <if test="chinese != null" >
-        chinese,
-      </if>
-      <if test="physics != null" >
-        Physics,
-      </if>
-      <if test="chemistry != null" >
-        chemistry,
-      </if>
-      <if test="biology != null" >
-        biology,
-      </if>
-      <if test="history != null" >
-        history,
-      </if>
-      <if test="geography != null" >
-        geography,
-      </if>
-      <if test="politics != null" >
-        politics,
-      </if>
-      <if test="music != null" >
-        music,
-      </if>
-      <if test="art != null" >
-        art,
-      </if>
-      <if test="sports != null" >
-        sports,
-      </if>
-      <if test="computer != null" >
-        computer,
+      <if test="grade != null" >
+        grade,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="studentId != null" >
-        #{studentId,jdbcType=BIGINT},
+      <if test="courseId != null" >
+        #{courseId,jdbcType=BIGINT},
       </if>
-      <if test="english != null" >
-        #{english,jdbcType=DOUBLE},
+      <if test="studentNum != null" >
+        #{studentNum,jdbcType=BIGINT},
       </if>
-      <if test="math != null" >
-        #{math,jdbcType=DOUBLE},
-      </if>
-      <if test="chinese != null" >
-        #{chinese,jdbcType=DOUBLE},
-      </if>
-      <if test="physics != null" >
-        #{physics,jdbcType=DOUBLE},
-      </if>
-      <if test="chemistry != null" >
-        #{chemistry,jdbcType=DOUBLE},
-      </if>
-      <if test="biology != null" >
-        #{biology,jdbcType=DOUBLE},
-      </if>
-      <if test="history != null" >
-        #{history,jdbcType=DOUBLE},
-      </if>
-      <if test="geography != null" >
-        #{geography,jdbcType=DOUBLE},
-      </if>
-      <if test="politics != null" >
-        #{politics,jdbcType=DOUBLE},
-      </if>
-      <if test="music != null" >
-        #{music,jdbcType=DOUBLE},
-      </if>
-      <if test="art != null" >
-        #{art,jdbcType=DOUBLE},
-      </if>
-      <if test="sports != null" >
-        #{sports,jdbcType=DOUBLE},
-      </if>
-      <if test="computer != null" >
-        #{computer,jdbcType=DOUBLE},
+      <if test="grade != null" >
+        #{grade,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
@@ -231,47 +147,14 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.studentId != null" >
-        student_id = #{record.studentId,jdbcType=BIGINT},
+      <if test="record.courseId != null" >
+        course_id = #{record.courseId,jdbcType=BIGINT},
       </if>
-      <if test="record.english != null" >
-        english = #{record.english,jdbcType=DOUBLE},
+      <if test="record.studentNum != null" >
+        student_num = #{record.studentNum,jdbcType=BIGINT},
       </if>
-      <if test="record.math != null" >
-        math = #{record.math,jdbcType=DOUBLE},
-      </if>
-      <if test="record.chinese != null" >
-        chinese = #{record.chinese,jdbcType=DOUBLE},
-      </if>
-      <if test="record.physics != null" >
-        Physics = #{record.physics,jdbcType=DOUBLE},
-      </if>
-      <if test="record.chemistry != null" >
-        chemistry = #{record.chemistry,jdbcType=DOUBLE},
-      </if>
-      <if test="record.biology != null" >
-        biology = #{record.biology,jdbcType=DOUBLE},
-      </if>
-      <if test="record.history != null" >
-        history = #{record.history,jdbcType=DOUBLE},
-      </if>
-      <if test="record.geography != null" >
-        geography = #{record.geography,jdbcType=DOUBLE},
-      </if>
-      <if test="record.politics != null" >
-        politics = #{record.politics,jdbcType=DOUBLE},
-      </if>
-      <if test="record.music != null" >
-        music = #{record.music,jdbcType=DOUBLE},
-      </if>
-      <if test="record.art != null" >
-        art = #{record.art,jdbcType=DOUBLE},
-      </if>
-      <if test="record.sports != null" >
-        sports = #{record.sports,jdbcType=DOUBLE},
-      </if>
-      <if test="record.computer != null" >
-        computer = #{record.computer,jdbcType=DOUBLE},
+      <if test="record.grade != null" >
+        grade = #{record.grade,jdbcType=DOUBLE},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -281,20 +164,9 @@
   <update id="updateByExample" parameterType="map" >
     update mg_grade
     set id = #{record.id,jdbcType=BIGINT},
-      student_id = #{record.studentId,jdbcType=BIGINT},
-      english = #{record.english,jdbcType=DOUBLE},
-      math = #{record.math,jdbcType=DOUBLE},
-      chinese = #{record.chinese,jdbcType=DOUBLE},
-      Physics = #{record.physics,jdbcType=DOUBLE},
-      chemistry = #{record.chemistry,jdbcType=DOUBLE},
-      biology = #{record.biology,jdbcType=DOUBLE},
-      history = #{record.history,jdbcType=DOUBLE},
-      geography = #{record.geography,jdbcType=DOUBLE},
-      politics = #{record.politics,jdbcType=DOUBLE},
-      music = #{record.music,jdbcType=DOUBLE},
-      art = #{record.art,jdbcType=DOUBLE},
-      sports = #{record.sports,jdbcType=DOUBLE},
-      computer = #{record.computer,jdbcType=DOUBLE}
+      course_id = #{record.courseId,jdbcType=BIGINT},
+      student_num = #{record.studentNum,jdbcType=BIGINT},
+      grade = #{record.grade,jdbcType=DOUBLE}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -302,67 +174,23 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.middleschool.grade.common.dto.MgGrade" >
     update mg_grade
     <set >
-      <if test="studentId != null" >
-        student_id = #{studentId,jdbcType=BIGINT},
+      <if test="courseId != null" >
+        course_id = #{courseId,jdbcType=BIGINT},
       </if>
-      <if test="english != null" >
-        english = #{english,jdbcType=DOUBLE},
+      <if test="studentNum != null" >
+        student_num = #{studentNum,jdbcType=BIGINT},
       </if>
-      <if test="math != null" >
-        math = #{math,jdbcType=DOUBLE},
-      </if>
-      <if test="chinese != null" >
-        chinese = #{chinese,jdbcType=DOUBLE},
-      </if>
-      <if test="physics != null" >
-        Physics = #{physics,jdbcType=DOUBLE},
-      </if>
-      <if test="chemistry != null" >
-        chemistry = #{chemistry,jdbcType=DOUBLE},
-      </if>
-      <if test="biology != null" >
-        biology = #{biology,jdbcType=DOUBLE},
-      </if>
-      <if test="history != null" >
-        history = #{history,jdbcType=DOUBLE},
-      </if>
-      <if test="geography != null" >
-        geography = #{geography,jdbcType=DOUBLE},
-      </if>
-      <if test="politics != null" >
-        politics = #{politics,jdbcType=DOUBLE},
-      </if>
-      <if test="music != null" >
-        music = #{music,jdbcType=DOUBLE},
-      </if>
-      <if test="art != null" >
-        art = #{art,jdbcType=DOUBLE},
-      </if>
-      <if test="sports != null" >
-        sports = #{sports,jdbcType=DOUBLE},
-      </if>
-      <if test="computer != null" >
-        computer = #{computer,jdbcType=DOUBLE},
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=DOUBLE},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.middleschool.grade.common.dto.MgGrade" >
     update mg_grade
-    set student_id = #{studentId,jdbcType=BIGINT},
-      english = #{english,jdbcType=DOUBLE},
-      math = #{math,jdbcType=DOUBLE},
-      chinese = #{chinese,jdbcType=DOUBLE},
-      Physics = #{physics,jdbcType=DOUBLE},
-      chemistry = #{chemistry,jdbcType=DOUBLE},
-      biology = #{biology,jdbcType=DOUBLE},
-      history = #{history,jdbcType=DOUBLE},
-      geography = #{geography,jdbcType=DOUBLE},
-      politics = #{politics,jdbcType=DOUBLE},
-      music = #{music,jdbcType=DOUBLE},
-      art = #{art,jdbcType=DOUBLE},
-      sports = #{sports,jdbcType=DOUBLE},
-      computer = #{computer,jdbcType=DOUBLE}
+    set course_id = #{courseId,jdbcType=BIGINT},
+      student_num = #{studentNum,jdbcType=BIGINT},
+      grade = #{grade,jdbcType=DOUBLE}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
