@@ -9,7 +9,7 @@ public class MgStudent {
 
     private String sex;
 
-    private String classroot;
+    private String classroom;
 
     private String birthPlace;
 
@@ -45,12 +45,12 @@ public class MgStudent {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public String getClassroot() {
-        return classroot;
+    public String getClassroom() {
+        return classroom;
     }
 
-    public void setClassroot(String classroot) {
-        this.classroot = classroot == null ? null : classroot.trim();
+    public void setClassroom(String classroom) {
+        this.classroom = classroom == null ? null : classroom.trim();
     }
 
     public String getBirthPlace() {

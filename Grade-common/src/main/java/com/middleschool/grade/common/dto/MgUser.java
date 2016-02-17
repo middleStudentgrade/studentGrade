@@ -7,6 +7,8 @@ public class MgUser {
 
     private String password;
 
+    private String type;
+
     public Long getId() {
         return id;
     }
@@ -29,5 +31,13 @@ public class MgUser {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
     }
 }

@@ -28,7 +28,7 @@ public class IndexController {
 	public String test(){
 		MgStudent student=new MgStudent();
 		student.setName("hhh");
-		student.setStudentNum(20122213258L);
+		student.setStudentNum(2012221328L);
 		testService.saveTest(student);
 		return "success";
 	}

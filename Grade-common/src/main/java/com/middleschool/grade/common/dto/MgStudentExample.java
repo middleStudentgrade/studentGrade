@@ -364,73 +364,73 @@ public class MgStudentExample {
             return (Criteria) this;
         }
 
-        public Criteria andClassrootIsNull() {
-            addCriterion("classroot is null");
+        public Criteria andClassroomIsNull() {
+            addCriterion("classroom is null");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootIsNotNull() {
-            addCriterion("classroot is not null");
+        public Criteria andClassroomIsNotNull() {
+            addCriterion("classroom is not null");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootEqualTo(String value) {
-            addCriterion("classroot =", value, "classroot");
+        public Criteria andClassroomEqualTo(String value) {
+            addCriterion("classroom =", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootNotEqualTo(String value) {
-            addCriterion("classroot <>", value, "classroot");
+        public Criteria andClassroomNotEqualTo(String value) {
+            addCriterion("classroom <>", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootGreaterThan(String value) {
-            addCriterion("classroot >", value, "classroot");
+        public Criteria andClassroomGreaterThan(String value) {
+            addCriterion("classroom >", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootGreaterThanOrEqualTo(String value) {
-            addCriterion("classroot >=", value, "classroot");
+        public Criteria andClassroomGreaterThanOrEqualTo(String value) {
+            addCriterion("classroom >=", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootLessThan(String value) {
-            addCriterion("classroot <", value, "classroot");
+        public Criteria andClassroomLessThan(String value) {
+            addCriterion("classroom <", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootLessThanOrEqualTo(String value) {
-            addCriterion("classroot <=", value, "classroot");
+        public Criteria andClassroomLessThanOrEqualTo(String value) {
+            addCriterion("classroom <=", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootLike(String value) {
-            addCriterion("classroot like", value, "classroot");
+        public Criteria andClassroomLike(String value) {
+            addCriterion("classroom like", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootNotLike(String value) {
-            addCriterion("classroot not like", value, "classroot");
+        public Criteria andClassroomNotLike(String value) {
+            addCriterion("classroom not like", value, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootIn(List<String> values) {
-            addCriterion("classroot in", values, "classroot");
+        public Criteria andClassroomIn(List<String> values) {
+            addCriterion("classroom in", values, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootNotIn(List<String> values) {
-            addCriterion("classroot not in", values, "classroot");
+        public Criteria andClassroomNotIn(List<String> values) {
+            addCriterion("classroom not in", values, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootBetween(String value1, String value2) {
-            addCriterion("classroot between", value1, value2, "classroot");
+        public Criteria andClassroomBetween(String value1, String value2) {
+            addCriterion("classroom between", value1, value2, "classroom");
             return (Criteria) this;
         }
 
-        public Criteria andClassrootNotBetween(String value1, String value2) {
-            addCriterion("classroot not between", value1, value2, "classroot");
+        public Criteria andClassroomNotBetween(String value1, String value2) {
+            addCriterion("classroom not between", value1, value2, "classroom");
             return (Criteria) this;
         }
 
