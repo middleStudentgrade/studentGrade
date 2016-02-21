@@ -34,7 +34,6 @@ public class IndexController {
 		MgStudent student=new MgStudent();
 		student.setName("hhh");
 		student.setStudentNum(20122213239L);
-		student.setStudentNum(201213259L);
 		testService.saveTest(student);
 		return "success";
 	}
