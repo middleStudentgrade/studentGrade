@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.middleschool.grade</groupId>
-    <artifactId>grade</artifactId>
+    <groupId>com.middleschool.score</groupId>
+    <artifactId>score</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Grade-admin</module>
-        <module>Grade-common</module>
-        <module>Grade-web</module>
+        <module>Score-admin</module>
+        <module>Score-common</module>
+        <module>Score-web</module>
     </modules>
     <properties>
         <junit.version>4.12</junit.version>
