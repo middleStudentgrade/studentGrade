@@ -33,7 +33,7 @@ public class IndexController {
 	public String test(){
 		MgStudent student=new MgStudent();
 		student.setName("hhh");
-		student.setStudentNum(20122213239L);
+		student.setStudentNum(201222132339L);
 		testService.saveTest(student);
 		return "success";
 	}
